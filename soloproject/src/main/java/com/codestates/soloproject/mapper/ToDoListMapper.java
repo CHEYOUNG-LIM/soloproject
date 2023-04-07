@@ -1,10 +1,13 @@
 package com.codestates.soloproject.mapper;
 
+import com.codestates.soloproject.dto.PatchDto;
 import com.codestates.soloproject.dto.PostDto;
 import com.codestates.soloproject.dto.ResponseDto;
 import com.codestates.soloproject.entity.ToDoList;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
+
+import java.util.List;
 
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface ToDoListMapper {
@@ -39,4 +42,8 @@ public interface ToDoListMapper {
 
         return responseDto;
     }
+
+    ToDoList patchDtoToToDoList(PatchDto patchDto);
+
+    List<ResponseDto> toDoListToResponseDto(List<ToDoList> toDoLists);
 }

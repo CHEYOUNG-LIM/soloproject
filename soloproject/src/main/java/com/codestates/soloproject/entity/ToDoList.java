@@ -20,7 +20,7 @@ public class ToDoList {
     @Column(name = "contents")
     private String title;
 
-    @Column
+    @Column(unique = true)
     private Long todo_order;
 
     @Column
