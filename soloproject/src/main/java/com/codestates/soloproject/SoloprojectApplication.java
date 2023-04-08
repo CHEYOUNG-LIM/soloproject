@@ -2,12 +2,18 @@ package com.codestates.soloproject;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class SoloprojectApplication {
+public class SoloprojectApplication extends SpringBootServletInitializer { // (1)
 
 	public static void main(String[] args) {
 		SpringApplication.run(SoloprojectApplication.class, args);
 	}
 
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) { // (2)
+		return builder.sources(SoloprojectApplication.class);
+	}
 }

@@ -46,6 +46,12 @@ public class ToDoService {
         toDoRepository.delete(findToDo);
     }
 
+    public void deleteToDos() {
+
+        toDoRepository.deleteAll();
+    }
+
+
     public ToDoList findToDoList(long id) {
         // 검증이 됐으면?
         return findVerifiedToDo(id);
